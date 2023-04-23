@@ -78,7 +78,7 @@ def parse_command(commands):
     for match in set(matches):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
-
+#
     return command
 
 
