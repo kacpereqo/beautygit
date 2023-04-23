@@ -12,7 +12,7 @@ git_commands = {
         {
             "alias": "🔧 fix",
             "description": "A bug fix",
-            "command": ["git add .", "git commit -m \"🔧 fix: <description> <description>\"", "git push"],
+            "command": ["git add .", "git commit -m \"🔧 fix: <description>\"", "git push"],
         },
         {
             "alias": "✨ add",
@@ -22,7 +22,7 @@ git_commands = {
         {
             "alias": "♻️ refactor",
             "description": "Refactored code",
-            "command": ["git add .", "git commit -m \"♻️ refactor: <description>\"", "git push"],
+            "command": ["git add .", "git commit -m \"♻️ refactor  <description>\"", "git push"],
         },
         {
             "alias": "🔨 chore",
@@ -78,7 +78,6 @@ def parse_command(commands):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
 
-    print(command)
     return command
 
 
