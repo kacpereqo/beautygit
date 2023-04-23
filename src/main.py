@@ -72,9 +72,9 @@ def use_git_commands():
 
 
 def parse_command(commands):
-    command = "&&".join(commands)
+    command = " && ".join(commands)
     matches = re.findall(r"<(.*?)>", command)
-    for match in matches:
+    for match in set(matches):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
 
