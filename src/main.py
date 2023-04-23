@@ -68,9 +68,6 @@ def use_git_commands():
 
     answers = inquirer.prompt(git_commands_view)
     command = parse_command(answers["command"])
-
-    print("\n\n")
-
     os.system(command)
 
 
