@@ -1,8 +1,10 @@
-import msvcrt as m
+
 import os
 
 import inquirer
 from rich import print
+
+from decorators import *
 
 git_commands = {
     "commit": [
@@ -40,6 +42,8 @@ git_commands = {
 }
 
 
+@clear_screen
+@press_to_continue
 def use_git_commands():
     git_commands_view = []
     for idx, group in enumerate(git_commands):
@@ -56,8 +60,6 @@ def use_git_commands():
 
     answers = inquirer.prompt(git_commands_view)
     os.system(" && ".join(answers["command"]))
-    print("\nPress any key to continue...")
-    m.getch()
 
 
 def create_new_git_command():
