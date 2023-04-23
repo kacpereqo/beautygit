@@ -69,7 +69,7 @@ def use_git_commands():
     answers = inquirer.prompt(git_commands_view)
     command = parse_command(answers["command"])
 
-    print("-" * 50)
+    print("-|Execution|-" + "-" * 50)
 
     os.system(command)
 
@@ -83,7 +83,6 @@ def parse_command(commands):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
 
-    print("-" * 50)
     print("\n".join(command.split(" && ")))
 
     return command
