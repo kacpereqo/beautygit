@@ -5,7 +5,7 @@ import os
 def press_to_continue(func):
     def wrapper(*args, **kwargs):
         func(*args, **kwargs)
-        print("\n[bold]Press any key to continue...[/]")
+        print("\n[bold]Press any key to continue...[\]")
         m.getch()
     return wrapper
 
