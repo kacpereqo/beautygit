@@ -12,32 +12,32 @@ git_commands = {
         {
             "alias": "🔧 fix",
             "description": "A bug fix",
-            "command": ["git add .", "git commit -m \"🔧 fix: <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"🔧 fix: <description> ~ <file> \"", "git push"],
         },
         {
             "alias": "✨ add",
             "description": "Added a new feature",
-            "command": ["git add .", "git commit -m \"✨ add: <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"✨ add: <description> ~ <file> \"", "git push"],
         },
         {
             "alias": "♻️ refactor",
             "description": "Refactored code",
-            "command": ["git add .", "git commit -m \"♻️ refactor  <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"♻️ refactor  <description> ~ <file> \"", "git push"],
         },
         {
             "alias": "🔨 chore",
             "description": "A code change that neither fixes a bug nor adds a feature",
-            "command": ["git add .", "git commit -m \"🔨 chore: <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"🔨 chore: <description> ~ <file> \"", "git push"],
         },
         {
             "alias": "🚀 perf",
             "description": "Perfomance improvement",
-            "command": ["git add .", "git commit -m \"🚀 perf: <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"🚀 perf: <description> ~ <file> \"", "git push"],
         },
         {
             "alias": "📝 docs",
             "description": "Documentation changes",
-            "command": ["git add .", "git commit -m \"📝 docs: <description> | <file> \"", "git push"],
+            "command": ["git add .", "git commit -m \"📝 docs: <description> ~ <file> \"", "git push"],
         }
     ]
 }
