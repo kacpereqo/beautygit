@@ -42,8 +42,8 @@ git_commands = {
 }
 
 
-@press_to_continue
 @clear_screen
+@press_to_continue
 def use_git_commands():
     git_commands_view = []
     for idx, group in enumerate(git_commands):
