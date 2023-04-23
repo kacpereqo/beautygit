@@ -83,7 +83,6 @@ def parse_command(commands):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
 
-    print("\n")
     print("\n".join(command.split(" && ")))
 
     return command
