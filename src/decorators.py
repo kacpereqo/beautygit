@@ -15,5 +15,6 @@ def press_to_continue(func):
 def clear_screen(func):
     def wrapper(*args, **kwargs):
         os.system("cls")
+        print("Aaaaaaaaaaaaaaaaaaaa")
         func(*args, **kwargs)
     return wrapper
