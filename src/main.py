@@ -73,6 +73,9 @@ def use_git_commands():
 
 def parse_command(commands):
     command = " && ".join(commands)
+
+    print("\n\n")
+
     matches = re.findall(r"<(.*?)>", command)
     for match in set(matches):
         user_input = input(f"{match}: ")
