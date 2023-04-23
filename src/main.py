@@ -1,3 +1,4 @@
+import msvcrt as m
 import os
 
 import inquirer
@@ -55,6 +56,8 @@ def use_git_commands():
 
     answers = inquirer.prompt(git_commands_view)
     os.system(" && ".join(answers["command"]))
+    print("Press any key to continue...")
+    m.getch()
 
 
 def create_new_git_command():
