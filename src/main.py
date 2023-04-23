@@ -78,8 +78,9 @@ def parse_command(commands):
     command = " && ".join(commands)
 
     matches = re.findall(r"<(.*?)>", command)
-    for match in set(matches):
+    if matches:
         print("-" * 50)
+    for match in set(matches):
         user_input = input(f"{match}: ")
         command = command.replace(f"<{match}>", user_input)
 
