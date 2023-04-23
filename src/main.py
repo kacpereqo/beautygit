@@ -56,7 +56,7 @@ def use_git_commands():
 
     answers = inquirer.prompt(git_commands_view)
     os.system(" && ".join(answers["command"]))
-    print("Press any key to continue...")
+    print("\nPress any key to continue...")
     m.getch()
 
 
