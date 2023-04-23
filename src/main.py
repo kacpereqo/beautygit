@@ -1,5 +1,6 @@
 
 import os
+import re
 
 import inquirer
 from rich import print
@@ -11,7 +12,7 @@ git_commands = {
         {
             "alias": "🔧 fix",
             "description": "A bug fix",
-            "command": ["git add .", "git commit -m \"🔧 fix: <description>\"", "git push"],
+            "command": ["git add .", "git commit -m \"🔧 fix: <description> <description>\"", "git push"],
         },
         {
             "alias": "✨ add",
@@ -48,18 +49,37 @@ def use_git_commands():
     git_commands_view = []
     for idx, group in enumerate(git_commands):
         print(f"[bold]{group}[/]")
+
+        choices = []
+
+        for command in git_commands[group]:
+            choice = (
+                f"{command['alias']} - {command['description']}", command["command"])
+            choices.append(choice)
+
         git_commands_view.append(
             inquirer.List(
                 "command",
                 message="A",
                 carousel=True,
-                choices=[
-                    (f"{command['alias']} - {command['description']}", command["command"]) for command in git_commands[group]]
+                choices=choices
             )
         )
 
     answers = inquirer.prompt(git_commands_view)
-    os.system(" && ".join(answers["command"]))
+    command = parse_command(answers["command"])
+    os.system(command)
+
+
+def parse_command(commands):
+    command = "&&".join(commands)
+    matches = re.findall(r"<(.*?)>", command)
+    for match in matches:
+        user_input = input(f"{match}: ")
+        command = command.replace(f"<{match}>", user_input)
+
+    print(command)
+    return command
 
 
 def create_new_git_command():
@@ -75,7 +95,7 @@ if __name__ == "__main__":
                                choices=[
                                    ('Use git commands', use_git_commands),
                                    ('Create new git commnad',
-                                    create_new_git_command),
+                                       create_new_git_command),
                                    ('Delete command', delete_command),
                                    ('Exit', exit)
                                ])]
